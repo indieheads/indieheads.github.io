@@ -797,6 +797,10 @@ a.fc-more:hover {
 	width: 220px;
 }
 
+.fc-event-container {
+	background-color: #fff;
+}
+
 .fc-more-popover .fc-event-container {
 	padding: 10px;
 }
