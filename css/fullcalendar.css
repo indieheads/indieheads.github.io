@@ -44,6 +44,7 @@ body .fc { /* extra precedence to overcome jqui */
 .fc-unthemed .fc-list-view,
 .fc-unthemed .fc-list-heading td {
 	border-color: #ddd;
+	background-color: #FFF !important;
 }
 
 .fc-unthemed .fc-popover {
@@ -847,7 +848,7 @@ a.fc-more:hover {
 
 .fc-basic-view .fc-body .fc-row {
 	min-height: 4em; /* ensure that all rows are at least this tall */
-	background-color: #FFF !important;
+
 }
 
 /* a "rigid" row will take up a constant amount of height because content-skeleton is absolute */
