@@ -44,7 +44,7 @@ body .fc { /* extra precedence to overcome jqui */
 .fc-unthemed .fc-list-view,
 .fc-unthemed .fc-list-heading td {
 	border-color: #ddd;
-	background-color: transparent !important;
+	background-color: #fff !important;
 }
 
 .fc-unthemed .fc-popover {
