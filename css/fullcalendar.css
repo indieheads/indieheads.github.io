@@ -910,6 +910,7 @@ a.fc-more:hover {
 	-webkit-box-sizing: content-box;
 	   -moz-box-sizing: content-box;
 	        box-sizing: content-box;
+	background-color: #fff !important;
 }
 
 .fc-view, /* scope positioning and z-index's for everything within the view */
