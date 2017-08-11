@@ -298,6 +298,7 @@ hr.fc-divider {
 	border-collapse: collapse;
 	border-spacing: 0;
 	font-size: 1em; /* normalize cross-browser */
+	background-color: #FFF;
 }
 
 .fc th {
