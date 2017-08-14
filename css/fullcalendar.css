@@ -4,6 +4,10 @@
  * (c) 2017 Adam Shaw
  */
 
+table tbody tr:nth-child(2n + 1) {
+    background-color: none;
+}
+
 #loading {
 	display: none;
 	position: absolute;
