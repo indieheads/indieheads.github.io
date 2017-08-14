@@ -4310,3 +4310,9 @@
 			}
 
 		}
+
+/* USER OVERRIDES */
+
+.headerimage {
+	display: block;
+}
