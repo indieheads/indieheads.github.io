@@ -805,6 +805,10 @@ a.fc-more:hover {
 .fc-toolbar .ui-state-hover {
 	z-index: 2;
 }
+
+.fc-state-hover {
+	background-color: #000;
+}
 	
 .fc-toolbar .fc-state-down {
 	z-index: 3;
