@@ -298,7 +298,6 @@ hr.fc-divider {
 	border-collapse: collapse;
 	border-spacing: 0;
 	font-size: 1em; /* normalize cross-browser */
-	background-color: #FFF !important;
 }
 
 .fc th {
@@ -827,10 +826,6 @@ a.fc-more:hover {
 .fc-view > table { /* so dragged elements can be above the view's main element */
 	position: relative;
 	z-index: 1;
-}
-
-.fc-view-container {
-	background-color: #fff !important;
 }
 
 
