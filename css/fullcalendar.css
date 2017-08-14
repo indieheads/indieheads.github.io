@@ -5,7 +5,7 @@
  */
 
 table tbody tr:nth-child(2n + 1) {
-    background-color: #FFFFFF;
+    background: none;
 }
 
 #loading {
