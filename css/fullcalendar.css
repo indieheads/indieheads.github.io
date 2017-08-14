@@ -4,9 +4,17 @@
  * (c) 2017 Adam Shaw
  */
 
+/* MAIN CSS OVERRIDES */
 table tbody tr:nth-child(2n + 1) {
     background: none;
 }
+
+table {
+    margin: 0;
+    width: 100%;
+}
+
+/* FULL CALENDAR STYLES */
 
 #loading {
 	display: none;
