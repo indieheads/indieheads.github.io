@@ -451,6 +451,7 @@ temporary rendered events).
 	border-radius: 3px;
 	border: 1px solid #fff; /* default BORDER color */
 	font-weight: normal; /* undo jqui's ui-widget-header bold */
+	
 }
 
 .fc-event,
@@ -462,7 +463,7 @@ temporary rendered events).
 .fc-event,
 .fc-event:hover,
 .ui-widget .fc-event {
-	color: #fff; /* default TEXT color */
+	color: #000; /* default TEXT color */
 	text-decoration: none; /* if <a> has an href */
 }
 
