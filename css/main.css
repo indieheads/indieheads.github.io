@@ -4314,5 +4314,5 @@
 /* USER OVERRIDES */
 
 .headerimage {
-	display: block;
+	display: block !important;
 }
