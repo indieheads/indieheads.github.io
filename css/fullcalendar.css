@@ -61,7 +61,7 @@ body .fc { /* extra precedence to overcome jqui */
 }
 
 .fc-unthemed td.fc-today {
-	background: #8a4680;
+	background: rgba(138, 70, 128, 0.21);
 }
 
 .fc-highlight { /* when user is selecting cells */
