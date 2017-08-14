@@ -12464,7 +12464,7 @@ Calendar.defaults = {
 	nextDayThreshold: '09:00:00', // 9am
 
 	// display
-	defaultView: 'month',
+	defaultView: 'listYear',
 	aspectRatio: 1.35,
 	header: {
 		left: 'title',
