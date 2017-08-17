@@ -1,3 +1,3 @@
 
 INDIEHEADS JQBX Static Site.
-mailto:indieheadsjqbx@gmail.com
+indieheadsjqbx@gmail.com
