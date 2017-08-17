@@ -85,14 +85,17 @@
 						<div>
 							<div class="box">
 								<div class="image fit">
-									<img src="../images/pic02.jpg" alt="" />
+									<script type="text/template" id="lastFmWidget">
+										<img src="{ track.image.extralarge }">
 								</div>
 								<div class="content">
 									<header class="align-center">
-										<p>maecenas sapien feugiat ex purus</p>
-										<h2>Lorem ipsum dolor</h2>
+										<h2>NOW PLAYING on R/INDIEHEADS</h2>
 									</header>
-									<p> Cras aliquet urna ut sapien tincidunt, quis malesuada elit facilisis. Vestibulum sit amet tortor velit. Nam elementum nibh a libero pharetra elementum. Maecenas feugiat ex purus, quis volutpat lacus placerat malesuada.</p>
+										<p>{ track.artist }/p>
+										<h2>{ track.title }</h2>
+										<p>{ track.album }</p>
+									</script>
 									<footer class="align-center">
 										<a href="#" class="button alt">Learn More</a>
 									</footer>
@@ -185,6 +188,14 @@
 			<script src="../js/skel.min.js"></script>
 			<script src="../js/util.js"></script>
 			<script src="../js/main.js"></script>
-
+		<!-- Currently Playing -->
+			<script src="../js/jquery.lastfmnowplaying.js"></script>
+		<!-- Currently Playing I don't know what I'm doing -->
+			<script>
+				$('#lastFmWidget').lastfmNowPlaying({
+				apiKey: 'd934cbc98c1d7e09f4e85f62786c365b',
+				members: ['LASTdotFMbot']
+			});
+		</script>
 	</body>
 </html>
