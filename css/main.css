@@ -4317,6 +4317,10 @@
 	text-align: center;
 }
 
+.topArtistsImage, .topArtistsName {
+	vertical-align: top;	
+}
+
 /* USER OVERRIDES */
 
 .headerimage {
