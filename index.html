@@ -9,7 +9,7 @@
 		<title>Indieheads JQBX</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-		<link rel="stylesheet" href="../css/main.css" />
+		<link rel="stylesheet" href="css/main.css" />
 		<link rel="icon" type="image/png" href="images/cowboyFavicon.png" />
 	</head>
 	<body>
@@ -32,25 +32,25 @@
 		<!-- Banner -->
 			<section class="banner full">
 				<article>
-					<img src="../images/slide01.jpg" alt="" />
+					<img src="images/slide01.jpg" alt="" />
 					<div class="inner">
 						<header>
-							<span class="image fit"><img src="../images/indieheads.png" alt="" class="headerimage" /></span>
+							<span class="image fit"><img src="images/indieheads.png" alt="" class="headerimage" /></span>
 						</header>
 					</div>
 				</article>
 				<article>
-					<img src="../images/slide02.jpg" alt="" />
+					<img src="images/slide02.jpg" alt="" />
 					<div class="inner">
 						<header>
 							<h2>JQBX IS</h2>
-							<span class="image fit"><img src="../images/cowboy.png" alt="" class="headerimage" /></span>
+							<span class="image fit"><img src="images/cowboy.png" alt="" class="headerimage" /></span>
 							<a href="http://jqbx.fm/" target="_blank" class="button alt">Discover new music</a>
 						</header>
 					</div>
 				</article>
 				<article>
-					<img src="../images/slide03.jpg"  alt="" />
+					<img src="images/slide03.jpg"  alt="" />
 					<div class="inner">
 						<header>
 							<p>Sed cursus aliuam veroeros lorem ipsum nullam</p>
@@ -59,7 +59,7 @@
 					</div>
 				</article>
 				<article>
-					<img src="../images/slide04.jpg"  alt="" />
+					<img src="images/slide04.jpg"  alt="" />
 					<div class="inner">
 						<header>
 							<p>Adipiscing lorem ipsum feugiat sed phasellus consequat</p>
@@ -68,7 +68,7 @@
 					</div>
 				</article>
 				<article>
-					<img src="../images/slide05.jpg"  alt="" />
+					<img src="images/slide05.jpg"  alt="" />
 					<div class="inner">
 						<header>
 							<p>Ipsum dolor sed magna veroeros lorem ipsum</p>
@@ -107,19 +107,6 @@
 
 						<div>
 							<div class="box">
-								<!--<div class="image fit">
-									<img src="../images/pic03.jpg" alt="" />
-								</div>
-								<div class="content">
-									<header class="align-center">
-										<p>mattis elementum sapien pretium tellus</p>
-										<h2>Vestibulum sit amet</h2>
-									</header>
-									<p> Cras aliquet urna ut sapien tincidunt, quis malesuada elit facilisis. Vestibulum sit amet tortor velit. Nam elementum nibh a libero pharetra elementum. Maecenas feugiat ex purus, quis volutpat lacus placerat malesuada.</p>
-									<footer class="align-center">
-										<a href="#" class="button alt">Learn More</a>
-									</footer>
-								</div>-->
 								<div class="content">
 									<header class="align-center">
 										<h2>Our Top Artists</h2>
@@ -153,22 +140,22 @@
 					<div class="gallery">
 						<div>
 							<div class="image fit">
-								<a href="#"><img src="../images/pic01.jpg" alt="" /></a>
+								<a href="#"><img src="images/pic01.jpg" alt="" /></a>
 							</div>
 						</div>
 						<div>
 							<div class="image fit">
-								<a href="#"><img src="../images/pic02.jpg" alt="" /></a>
+								<a href="#"><img src="images/pic02.jpg" alt="" /></a>
 							</div>
 						</div>
 						<div>
 							<div class="image fit">
-								<a href="#"><img src="../images/pic03.jpg" alt="" /></a>
+								<a href="#"><img src="images/pic03.jpg" alt="" /></a>
 							</div>
 						</div>
 						<div>
 							<div class="image fit">
-								<a href="#"><img src="../images/pic04.jpg" alt="" /></a>
+								<a href="#"><img src="images/pic04.jpg" alt="" /></a>
 							</div>
 						</div>
 					</div>
@@ -191,15 +178,16 @@
 			</footer>
 
 		<!-- Scripts -->
-			<script src="../js/jquery.min.js"></script>
-			<script src="../js/jquery.scrollex.min.js"></script>
-			<script src="../js/skel.min.js"></script>
-			<script src="../js/util.js"></script>
-			<script src="../js/main.js"></script>
-		<!-- Currently Playing -->
-			<script src="../js/jquery.lastfmnowplaying.js"></script>
+			<script src="js/jquery.min.js"></script>
+			<script src="js/jquery.scrollex.min.js"></script>
+			<script src="js/skel.min.js"></script>
+			<script src="js/util.js"></script>
+			<script src="js/main.js"></script>
+		<!-- Custom scripts - currently playing and top artists -->
+			<script src="js/jquery.lastfmnowplaying.js"></script>
 			<script src="js/lastFmTopArtists.js"></script>
-		<!-- Currently Playing I don't know what I'm doing -->
+
+		<!-- Load custom widgets -->
 			<script>
 			$(document).ready(function() {
 				$('#lastFmWidget').lastfmNowPlaying({
