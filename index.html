@@ -106,7 +106,7 @@
 
 						<div>
 							<div class="box">
-								<div class="image fit">
+								<!--<div class="image fit">
 									<img src="../images/pic03.jpg" alt="" />
 								</div>
 								<div class="content">
@@ -118,7 +118,8 @@
 									<footer class="align-center">
 										<a href="#" class="button alt">Learn More</a>
 									</footer>
-								</div>
+								</div>-->
+								<div id="topArtists"></div>
 							</div>
 						</div>
 
@@ -191,12 +192,18 @@
 			<script src="../js/main.js"></script>
 		<!-- Currently Playing -->
 			<script src="../js/jquery.lastfmnowplaying.js"></script>
+			<script src="js/lastFmTopArtists.js"></script>
 		<!-- Currently Playing I don't know what I'm doing -->
 			<script>
+			$(document).ready(function() {
 				$('#lastFmWidget').lastfmNowPlaying({
-				apiKey: 'd934cbc98c1d7e09f4e85f62786c365b',
-				members: ['LASTdotFMbot']
+					apiKey: 'd934cbc98c1d7e09f4e85f62786c365b',
+					members: ['LASTdotFMbot']			
+				});
+				
+				var topArtists = new TopArtists("LASTdotFMbot", "d934cbc98c1d7e09f4e85f62786c365b", "#topArtists");
+				topArtists.load();
 			});
-		</script>
+			</script>
 	</body>
 </html>
