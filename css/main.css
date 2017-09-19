@@ -4321,6 +4321,11 @@
 	vertical-align: top;	
 }
 
+.topArtistsImage {
+	width: 125px;
+	height: 125px;
+}
+
 /* USER OVERRIDES */
 
 .headerimage {
