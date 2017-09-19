@@ -61,8 +61,31 @@ TopArtists.prototype.load = function() {
  * @param {String} [id] - the target DOM element, defaults to this.targetElemId
  */ 
 TopArtists.prototype.show = function(id) {
+	/* get target element */
 	id = id || this.targetElemId;
 	var $targetElem = $(id);
+
+	/* create period dropdown */
+	var $periodSelect = $("<select>", {
+		"class": "periodSelect",
+		"id": "periodSelect"
+	});
+	var periods = ["Last Week", "Last Month", "Last 3 Months", "Last 6 Months", "Overall"];
+	var periodValues = ["7day", "1month", "3month", "6month", "overall"];
+	for(var i = 0; i < periods.length; i++) {
+		var $periodOption = $("<option>", {
+			"class": "periodOption",
+			"value": periodValues[i],
+			"text": periods[i]
+		});
+		if(periodValues[i] === this.period) {
+			$periodOption.attr("selected", "selected");
+		}
+		$periodSelect.append($periodOption);
+	}
+	$targetElem.append($periodSelect);
+	$periodSelect.change($.proxy(this._onPeriodSelectChange, this));
+
 	var $artistTable = $("<table>", {"class": "topArtistsTable"});
 	var imageSize = ImageSizeEnum[this.imageSize];
 
@@ -98,4 +121,11 @@ TopArtists.prototype.show = function(id) {
 		$artistTable.append($artistTableRow);
 		$targetElem.append($artistTable);
 	}
+}
+
+TopArtists.prototype._onPeriodSelectChange = function(event) {
+	var selectedPeriod = $("#periodSelect").val();
+	this.period = selectedPeriod;
+	$(this.targetElemId).empty();
+	this.load();
 }
