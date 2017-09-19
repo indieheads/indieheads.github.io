@@ -4311,6 +4311,12 @@
 
 		}
 
+/* Top Artists Widget */
+
+.topArtistsImageCell, .topArtistsNameCell {
+	text-align: center;
+}
+
 /* USER OVERRIDES */
 
 .headerimage {
