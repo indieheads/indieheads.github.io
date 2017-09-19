@@ -77,6 +77,7 @@ TopArtists.prototype.show = function(id) {
 			"src": artist.image[imageSize]["#text"]
 		});
 		var $artistNameCell = $("<td>", {"class": "topArtistsNameCell"});
+		var $artistNameHeader = $("<h3>");
 		var $artistName = $("<a>", {
 			"class": "topArtistsName",
 			"href": artist.url,
@@ -88,7 +89,8 @@ TopArtists.prototype.show = function(id) {
 		});
 
 		/* append to each other and to DOM */
-		$artistNameCell.append($artistName);
+		$artistNameHeader.append($artistName);
+		$artistNameCell.append($artistNameHeader);
 		$artistNameCell.append($playCount);
 		$artistImageCell.append($artistImage);
 		$artistTableRow.append($artistImageCell);
