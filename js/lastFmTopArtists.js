@@ -74,11 +74,13 @@ TopArtists.prototype.show = function(id) {
 		var $artistImageCell = $("<td>", {"class": "topArtistsImageCell"});
 		var $artistImage = $("<img>", {
 			"class": "topArtistsImage",
-			"src": artist.image[imageSize]["#text"]});
-		var $artistNameCell = $("<td>", {
-			"class": "topArtistsNameCell",
-			"text": artist.name});
-		var $artistName = $("<p>", {"class": "topArtistsName"});
+			"src": artist.image[imageSize]["#text"]
+		});
+		var $artistNameCell = $("<td>", {"class": "topArtistsNameCell"});
+		var $artistName = $("<p>", {
+			"class": "topArtistsName",
+			"text": artist.name
+		});
 
 		/* append to each other and to DOM */
 		$artistNameCell.append($artistName);
