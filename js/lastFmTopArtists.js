@@ -5,6 +5,9 @@
  *	Licensed under the Spencer is Better than Dan license
  */
 
+/**
+ * ImageSizeEnum - used to provide mapping between image size text name and location of image in artist array
+ */
 ImageSizeEnum = {
 	small: 0,
 	medium: 1,
