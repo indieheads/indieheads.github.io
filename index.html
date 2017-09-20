@@ -10,6 +10,7 @@
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
 		<link rel="stylesheet" href="css/main.css" />
+		<link rel="stylesheet" href="css/fullcalendar.css" />
 		<link rel="icon" type="image/png" href="images/cowboyFavicon.png" />
 	</head>
 	<body>
@@ -97,6 +98,20 @@
 				</div>
 			</section>
 
+		<!-- Two -->
+			<section id="two">
+				<div class="inner">
+					<div class="box">
+						<div class="content">
+							<div id='loading'>loading...</div>
+							<div id='calendar'></div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+		
+
 		<!-- Footer -->
 			<footer id="footer">
 				<div class="container">
@@ -116,21 +131,51 @@
 			<script src="js/skel.min.js"></script>
 			<script src="js/util.js"></script>
 			<script src="js/main.js"></script>
+
 		<!-- Custom scripts - currently playing and top artists -->
 			<script src="js/jquery.lastfmnowplaying.js"></script>
 			<script src="js/lastFmTopArtists.js"></script>
 
+		<!-- Google Cal scripts -->
+			<script src='js/moment.min.js'></script>
+			<script src='js/fullcalendar.min.js'></script>
+			<script src='js/gcal.min.js'></script>
+
 		<!-- Load custom widgets -->
 			<script>
+
 			$(document).ready(function() {
+				/* load now playing widget */
 				$('#lastFmWidget').lastfmNowPlaying({
 					apiKey: 'd934cbc98c1d7e09f4e85f62786c365b',
 					members: ['LASTdotFMbot']			
 				});
 				
+				/* load top artists widget */
 				var topArtists = new TopArtists("LASTdotFMbot", "d934cbc98c1d7e09f4e85f62786c365b", "#topArtists", "large", undefined, 25);
 				topArtists.load();
+
+				/* load google calendar widget */
+				$('#calendar').fullCalendar({
+					header: {
+					left: 'prev,next today',
+					center: 'title',
+					right: 'listMonth,month'
+					},
+					displayEventTime: true, // show the time column in list view
+					googleCalendarApiKey: 'AIzaSyBor-xf8G4p0IZAjN_D7n2VwfFC2UHJWWY',
+					// Listening Parties
+					events: 'indieheadsjqbx@gmail.com',
+					eventClick: function(event) {
+						// opens events in a popup window
+						window.open(event.url, 'gcalevent', 'width=700,height=600');
+						return false;
+					},
+					loading: function(bool) {
+						$('#loading').toggle(bool);
+					}	
+				});	
 			});
-			</script>
+		</script>
 	</body>
 </html>

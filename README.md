@@ -8,5 +8,4 @@ Notes:
 2. Contact page
  * e-mail, DM Drizzy on Reddit
  * link for Github bug reporting for JQBX
-3. Remove stock photo instances
 5. Embed the dirty strawpolls
