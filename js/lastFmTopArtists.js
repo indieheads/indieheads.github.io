@@ -89,6 +89,7 @@ TopArtists.prototype.show = function(id) {
 	$periodSelect.change($.proxy(this._onPeriodSelectChange, this));
 
 	/* create the top artists table */
+	var $artistTableDivWrapper = $("<div>", {"class": "topArtistsDivWrapper"});
 	var $artistTable = $("<table>", {"class": "topArtistsTable"});
 	var imageSize = ImageSizeEnum[this.imageSize];
 	for(var i = 0; i < this.artists.length; i++) {
@@ -122,7 +123,8 @@ TopArtists.prototype.show = function(id) {
 		$artistTableRow.append($artistNameCell);
 		$artistTable.append($artistTableRow);
 	}
-	$targetElem.append($artistTable);
+	$artistTableDivWrapper.append($artistTable);
+	$targetElem.append($artistTableDivWrapper);
 }
 
 /**

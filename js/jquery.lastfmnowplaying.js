@@ -134,6 +134,7 @@
 		var self = this;
 		var results = self.filteredResults;
 
+
 		// Prepare Last.fm track data
 		var track = {
 			artist: results.artist['#text'],
@@ -204,6 +205,9 @@
 		// Clean template
 		self.cleanTemplate();
 
+		if(track.artist === "Bruce Willis") {
+			Plugin.bruceParty();
+		}
 	};
 
 	/**
@@ -226,6 +230,15 @@
 		});
 
 	};
+
+	/**
+	 * It is time to have a bruce party
+	 */
+	Plugin.bruceParty = function() {
+		var $images = $(document).find("img");
+		$images.attr("src", "https://images-na.ssl-images-amazon.com/images/M/MV5BMjA0MjMzMTE5OF5BMl5BanBnXkFtZTcwMzQ2ODE3Mw@@._V1_UY317_CR27,0,214,317_AL_.jpg");
+		$(document).find("marquee").removeClass("hiddenBruceParty");
+	}
 
 	$.fn[ pluginName ] = function ( options ) {
 
