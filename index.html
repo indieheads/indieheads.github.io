@@ -25,7 +25,7 @@
 			<nav id="menu">
 				<ul class="links">
 					<li><a href="index.html">Home</a></li>
-					<li><a href="schedule.html">Listening Party Schedule</a></li>
+					<li><a id="calendarLink" href="#">Listening Party Schedule</a></li>
 				</ul>
 			</nav>
 
@@ -54,7 +54,7 @@
 			</section>
 
 
-		<!-- One -->
+		<!-- Top section widgets (last fm now playing + last fm top artists) -->
 			<section id="one" class="wrapper style2">
 				<div class="inner">
 					<div class="grid-style">
@@ -98,9 +98,9 @@
 				</div>
 			</section>
 
-		<!-- Two -->
+		<!-- Listening party calendar widget -->
 			<section id="two">
-				<div class="inner">
+				<div class="inner" id="calendarSection">
 					<div class="box">
 						<div class="content">
 							<div id='loading'>loading...</div>
@@ -158,23 +158,31 @@
 				/* load google calendar widget */
 				$('#calendar').fullCalendar({
 					header: {
-					left: 'prev,next today',
-					center: 'title',
-					right: 'listMonth,month'
+					left: "prev,next today",
+					center: "title",
+					right: "listMonth,month"
 					},
 					displayEventTime: true, // show the time column in list view
-					googleCalendarApiKey: 'AIzaSyBor-xf8G4p0IZAjN_D7n2VwfFC2UHJWWY',
+					googleCalendarApiKey: "AIzaSyBor-xf8G4p0IZAjN_D7n2VwfFC2UHJWWY",
 					// Listening Parties
-					events: 'indieheadsjqbx@gmail.com',
-					eventClick: function(event) {
+					events: "indieheadsjqbx@gmail.com",
+					eventClick: function(event) { 
 						// opens events in a popup window
-						window.open(event.url, 'gcalevent', 'width=700,height=600');
+						window.open(event.url, "gcalevent", "width=700,height=600");
 						return false;
 					},
 					loading: function(bool) {
-						$('#loading').toggle(bool);
+						$("#loading").toggle(bool);
 					}	
 				});	
+
+				/* add smooth scrolling for calendar link */
+				$("#calendarLink").click(function(event) {
+					$("html, body").animate({
+						scrollTop: $("#calendarSection").offset().top
+					}, 800);
+					$("#menu").removeClass("visible");
+				});
 			});
 		</script>
 	</body>
