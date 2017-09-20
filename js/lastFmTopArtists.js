@@ -86,13 +86,13 @@ TopArtists.prototype.show = function(id) {
 	$targetElem.append($periodSelect);
 	$periodSelect.change($.proxy(this._onPeriodSelectChange, this));
 
+	/* create the top artists table */
 	var $artistTable = $("<table>", {"class": "topArtistsTable"});
 	var imageSize = ImageSizeEnum[this.imageSize];
-
 	for(var i = 0; i < this.artists.length; i++) {
 		var artist = this.artists[i];
 
-		/* create DOM elements for list */
+		/* create DOM elements for the top artists table rows */
 		var $artistTableRow = $("<tr>", {"class": "topArtistsTableRow"});
 		var $artistImageCell = $("<td>", {"class": "topArtistsImageCell"});
 		var $artistImage = $("<img>", {
@@ -111,7 +111,7 @@ TopArtists.prototype.show = function(id) {
 			"text": artist.playcount + " plays"
 		});
 
-		/* append to each other and to DOM */
+		/* append to each other and to target element */
 		$artistNameHeader.append($artistName);
 		$artistNameCell.append($artistNameHeader);
 		$artistNameCell.append($playCount);
@@ -119,13 +119,24 @@ TopArtists.prototype.show = function(id) {
 		$artistTableRow.append($artistImageCell);
 		$artistTableRow.append($artistNameCell);
 		$artistTable.append($artistTableRow);
-		$targetElem.append($artistTable);
 	}
+	$targetElem.append($artistTable);
 }
 
+/**
+ * Reload function - wipe out the DOM elements generated from the widget and reload according to widget's current state.
+ */
+TopArtists.prototype.reload = function() {
+	$(this.targetElemId).empty();
+	this.load();
+}
+
+/**
+ * Event handler for time period dropdown change. Update the widget's currently-selected period and reload.
+ * @param {Object} event - the change event
+ */
 TopArtists.prototype._onPeriodSelectChange = function(event) {
 	var selectedPeriod = $("#periodSelect").val();
 	this.period = selectedPeriod;
-	$(this.targetElemId).empty();
-	this.load();
+	this.reload();
 }
