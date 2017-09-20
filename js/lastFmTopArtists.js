@@ -47,13 +47,11 @@ TopArtists.prototype.setData = function(data) {
  * Load the top artist data from lastFm. Call this after initalizing the TopArtists object.
  */
 TopArtists.prototype.load = function() {
-	$.ajax(
-		{ 
-			url: "https://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=" + this.username + "&api_key=" + this.apiKey + "&period=" + this.period + "&limit=" + this.limit + "&format=json",
-			success: this.setData,
-			context: this
-		}
-	 )
+	$.ajax({ 
+		url: "https://ws.audioscrobbler.com/2.0/?method=user.gettopartists&user=" + this.username + "&api_key=" + this.apiKey + "&period=" + this.period + "&limit=" + this.limit + "&format=json",
+		success: this.setData,
+		context: this
+	});
 }
 
 /**
