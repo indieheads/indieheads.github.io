@@ -4,6 +4,7 @@
  *	Author: skratz17
  *	Licensed under the Spencer is Better than Dan license
  *	skratz17 is god, kvistikor and drizzy are but babies
+ *	quick explanation of how to use is included at bottom of file
  */
 
 /**
@@ -36,15 +37,6 @@ function TopArtists(username, apiKey, targetElemId, imageSize, period, limit) {
 }
 
 /**
- * Set the data returned from lastFm API call and call show to create the list
- * @param {Object} data - data returned from API call
- */
-TopArtists.prototype.setData = function(data) {
-	this.artists = data.topartists.artist;
-	this.show();
-}
-
-/**
  * Load the top artist data from lastFm. Call this after initalizing the TopArtists object.
  */
 TopArtists.prototype.load = function() {
@@ -53,6 +45,15 @@ TopArtists.prototype.load = function() {
 		success: this.setData,
 		context: this
 	});
+}
+
+/**
+ * Set the data returned from lastFm API call and call show to create the list
+ * @param {Object} data - data returned from API call
+ */
+TopArtists.prototype.setData = function(data) {
+	this.artists = data.topartists.artist;
+	this.show();
 }
 
 /**
@@ -141,3 +142,19 @@ TopArtists.prototype._onPeriodSelectChange = function(event) {
 	this.period = selectedPeriod;
 	this.reload();
 }
+
+/* Quick explanation of how to use w/ examples
+ *
+ * So to use this you have to initialize a TopArtists object and then call its load function on the page you want to put the widget on. So, say I have some page called index.html and I want the widget to load under the div that has the id of "topArtists". I'd do this on index.html:
+ *
+ * 1) include this script:
+ * <script src="<path to this script>"></script>
+ *
+ * 2) after including this script, make a call to initialize the widget object, in a <script> element following the one that includes this script
+ *	var topArtistsWidget = new TopArtists("<username>", "<apiKey>", "#topArtists");
+ *	note: there are also some optional params you can pass into this, so for instance is you want the widget to default to the top 10 artists of the last 7 days, you can pass in params for those. see the documentation of the constructor for more details.
+ *
+ *	3) after that you just call load on the object you instantiated and the widget will get the data from LastFm and render under the DOM element whose id you passed in as the third argument to the constructor:
+ *
+ *	topArtistsWidget.load();
+ */
