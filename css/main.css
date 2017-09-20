@@ -4340,3 +4340,7 @@
 .headerimage {
 	display: block !important;
 }
+
+#menu .links a:hover {
+	cursor: pointer;
+}

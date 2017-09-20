@@ -24,8 +24,8 @@
 		<!-- Nav -->
 			<nav id="menu">
 				<ul class="links">
-					<li><a href="index.html">Home</a></li>
-					<li><a id="calendarLink" href="#">Listening Party Schedule</a></li>
+					<li><a id="homeLink">Home</a></li>
+					<li><a id="calendarLink">Listening Party Schedule</a></li>
 				</ul>
 			</nav>
 
@@ -176,7 +176,13 @@
 					}	
 				});	
 
-				/* add smooth scrolling for calendar link */
+				/* add smooth scrolling for menu links */
+				$("#homeLink").click(function(event) {
+					$("html, body").animate({
+						scrollTop: 0
+					},	800);
+					$("#menu").removeClass("visible");
+				});
 				$("#calendarLink").click(function(event) {
 					$("html, body").animate({
 						scrollTop: $("#calendarSection").offset().top
