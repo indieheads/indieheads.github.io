@@ -65,6 +65,7 @@ TopArtists.prototype.show = function(id) {
 	var $targetElem = $(id);
 
 	/* create period dropdown */
+	var $periodSelectDivWrapper = $("<div>", {"class": "select-wrapper"});
 	var $periodSelect = $("<select>", {
 		"class": "periodSelect",
 		"id": "periodSelect"
@@ -82,7 +83,8 @@ TopArtists.prototype.show = function(id) {
 		}
 		$periodSelect.append($periodOption);
 	}
-	$targetElem.append($periodSelect);
+	$periodSelectDivWrapper.append($periodSelect);
+	$targetElem.append($periodSelectDivWrapper);
 	$periodSelect.change($.proxy(this._onPeriodSelectChange, this));
 
 	/* create the top artists table */
