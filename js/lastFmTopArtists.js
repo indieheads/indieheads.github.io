@@ -3,6 +3,7 @@
  *	version -1
  *	Author: skratz17
  *	Licensed under the Spencer is Better than Dan license
+ *	skratz17 is god, kvistikor and drizzy are but babies
  */
 
 /**
