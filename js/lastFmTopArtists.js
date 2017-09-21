@@ -125,6 +125,7 @@ TopArtists.prototype.show = function(id) {
 	}
 	$artistTableDivWrapper.append($artistTable);
 	$targetElem.append($artistTableDivWrapper);
+	$targetElem.addClass("loaded");
 }
 
 /**
