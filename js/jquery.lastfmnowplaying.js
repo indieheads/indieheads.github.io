@@ -19,7 +19,18 @@
 		this._defaults = defaults;
 		this._name = pluginName;
 		this.filteredResults = [];
-		this.init();
+		if(options.refreshLimit) {
+			this.init();
+			setInterval(
+				(function(self) {
+					return function() {
+						self.init();
+					}
+				})(this), options.refreshLimit);
+		}
+		else {
+			this.init();
+		}
 
 	}
 
@@ -67,6 +78,7 @@
 	Plugin.prototype.filterData = function ( data ) {
 
 		var self = this;
+		self.filteredResults = [];
 		
 		$( data ).each( function () {
 
@@ -95,6 +107,7 @@
 		// Perform sorting after we have all our data
 
 		$(document).ajaxStop( function() {
+			$(this).unbind("ajaxStop");
 			
 			// Custom algorithm for sort() method
 			function sortbyNewest ( a, b ) {
@@ -105,7 +118,7 @@
 			self.filteredResults = self.filteredResults.sort( sortbyNewest );
 
 			// Return only the newest track
-			self.filteredResults = self.filteredResults[ self.filteredResults.length - 1 ];
+			self.filteredResult = self.filteredResults[ self.filteredResults.length - 1 ];
 
 			// Render Template
 			self.renderTemplate( self.prepareTemplateData() );
@@ -132,7 +145,7 @@
 	Plugin.prototype.prepareTemplateData = function () {
 		
 		var self = this;
-		var results = self.filteredResults;
+		var results = self.filteredResult;
 
 
 		// Prepare Last.fm track data
@@ -199,6 +212,11 @@
 
 		}
 
+		/* bit of a hacky solution, could be improved with more options... but if we are refreshing the widget, wipe out the previously-generated template to replace it with the refreshed update. the hackiness is that the previously-generated template is just assumed to be the siblings of the <script> template... so that should be improved */
+		if(self.options.refreshLimit) {
+			$("#" + self.element.id).siblings().remove();
+		}
+
 		// Add template to DOM
 		$( self.element ).after( template );
 
@@ -244,9 +262,10 @@
 
 		return this.each( function () {
 
-			if ( !$.data(this, 'plugin_' + pluginName) ) {
+//			if ( !$.data(this, 'plugin_' + pluginName) ) {
+				$.removeData(this, 'plugin_' + pluginName);
 				$.data(this, 'plugin_' + pluginName, new Plugin( this, options ) );
-			}
+//			}
 
 		});
 

@@ -63,7 +63,7 @@
 						<!-- LastFm Now Playing Widget -->
 						<div>
 							<div class="box">
-								<div class="image fit">
+								<div class="image fit" id="lastFmNowPlayingDiv">
 									<script type="text/template" id="lastFmWidget">
 										<img src="{ track.image.extralarge }">
 								</div>
@@ -75,10 +75,10 @@
 										{ track.title }</br>
 										<i>{ track.album }</i>
 										</p>
-									</script>
-									<footer class="align-center" style="padding-bottom:3rem; margin-top:-2rem;">
+									<footer class="align-center" style="padding-top: 20px; margin-top:-2rem;">
 										<a href="http://www.jqbx.fm/invite/room/indieheads" class="button alt">Listen Now</a>
 									</footer>
+									</script>
 								</div>
 							</div>
 						</div>
@@ -152,7 +152,8 @@
 				/* load now playing widget */
 				$('#lastFmWidget').lastfmNowPlaying({
 					apiKey: 'd934cbc98c1d7e09f4e85f62786c365b',
-					members: ['LASTdotFMbot']			
+					members: ['LASTdotFMbot'],
+					refreshLimit: 15000
 				});
 				
 				/* load top artists widget */
