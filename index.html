@@ -195,18 +195,17 @@
 					}, 800);
 					$("#menu").removeClass("visible");
 				});
-
-				/* this is hacky af please do not look at it it is hideous */
-				$("#topArtists").bind("DOMSubtreeModified", function() {
-					if(window.location.hash === "#cal" && $("#topArtists").hasClass("loaded")) {
-						$("html, body").animate({
-							scrollTop: $("#calendarSection").offset().top
-						},	800);
-						window.location.hash = "";
-					}
-				});
 			});
 			
+		$(document).ajaxStop(function() {
+			$(this).unbind("ajaxStop");
+			
+			if(window.location.hash === "#cal") {
+				$("html, body").animate({
+					scrollTop: $("#calendarSection").offset().top
+				},	800);
+			}
+		});
 		</script>
 	</body>
 </html>
