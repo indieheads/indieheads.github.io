@@ -20,13 +20,13 @@
 		this._name = pluginName;
 		this.filteredResults = [];
 		this.init();
-		if(options.refreshLimit) {
+		if(options.refreshPeriod) {
 			setInterval(
 				(function(self) {
 					return function() {
 						self.init();
 					}
-				})(this), options.refreshLimit);
+				})(this), options.refreshPeriod);
 		}
 	}
 
@@ -209,7 +209,7 @@
 		}
 
 		/* bit of a hacky solution, could be improved with more options... but if we are refreshing the widget, wipe out the previously-generated template to replace it with the refreshed update. the hackiness is that the previously-generated template is just assumed to be the siblings of the <script> template... so that should be improved */
-		if(self.options.refreshLimit) {
+		if(self.options.refreshPeriod) {
 			$("#" + self.element.id).siblings().remove();
 		}
 
