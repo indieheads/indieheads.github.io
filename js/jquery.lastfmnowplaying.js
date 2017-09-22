@@ -19,8 +19,8 @@
 		this._defaults = defaults;
 		this._name = pluginName;
 		this.filteredResults = [];
+		this.init();
 		if(options.refreshLimit) {
-			this.init();
 			setInterval(
 				(function(self) {
 					return function() {
@@ -28,10 +28,6 @@
 					}
 				})(this), options.refreshLimit);
 		}
-		else {
-			this.init();
-		}
-
 	}
 
 	/**
