@@ -4344,3 +4344,13 @@
 #menu .links a:hover {
 	cursor: pointer;
 }
+
+.box header p.smallSubHeader {
+	text-transform: none;
+	margin: -1rem 0 1.5rem 0;
+	letter-spacing: .1rem;
+}
+
+.box header p.smallSubHeader:after {
+	height: 0;
+}
