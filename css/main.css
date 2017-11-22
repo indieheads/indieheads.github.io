@@ -4335,7 +4335,7 @@
 	overflow: auto;
 }
 
-/* USER OVERRIDES */
+/* USER STYLES */
 
 .headerimage {
 	display: block !important;
@@ -4354,4 +4354,13 @@
 
 .box header p.smallSubHeader:after {
 	height: 0;
+}
+
+.aboutHeader {
+	font-family: cursive;
+	text-decoration: underline;
+}
+
+#aboutUs {
+	padding: 2rem 0 1rem 0;
 }
