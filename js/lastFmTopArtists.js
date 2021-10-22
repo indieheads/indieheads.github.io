@@ -10,7 +10,7 @@
 /**
  * ImageSizeEnum - used to provide mapping between image size text name and location of image in artist array
  */
-ImageSizeEnum = {
+let ImageSizeEnum = {
 	small: 0,
 	medium: 1,
 	large: 2,
@@ -92,8 +92,8 @@ TopArtists.prototype.show = function(id) {
 	var $artistTableDivWrapper = $("<div>", {"class": "topArtistsDivWrapper"});
 	var $artistTable = $("<table>", {"class": "topArtistsTable"});
 	var imageSize = ImageSizeEnum[this.imageSize];
-	for(var i = 0; i < this.artists.length; i++) {
-		var artist = this.artists[i];
+	for(let value of this.artists) {
+		var artist = this.artists[value];
 
 		/* create DOM elements for the top artists table rows */
 		var $artistTableRow = $("<tr>", {"class": "topArtistsTableRow"});

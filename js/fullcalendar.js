@@ -16,7 +16,6 @@
 	}
 })(function($, moment) {
 
-;;
 
 var FC = $.fullCalendar = {
 	version: "3.4.0",
@@ -941,7 +940,9 @@ function mergeProps(propObjs, complexProps) {
 
 // Create an object that has the given prototype. Just like Object.create
 function createObject(proto) {
-	var f = function() {};
+	var f = function() {
+		//this is intentionally empty
+	};
 	f.prototype = proto;
 	return new f();
 }
