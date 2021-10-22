@@ -7,7 +7,7 @@
 	$.fn.navList = function() {
 
 		var	$this = $(this);
-			$a = $this.find('a'),
+			var $a = $this.find('a'),
 			b = [];
 
 		$a.each(function() {
@@ -48,8 +48,8 @@
 		// Multiple elements?
 			if (this.length > 1) {
 
-				for (var i=0; i < this.length; i++)
-					$(this[i]).panel(userConfig);
+				for (let value of this)
+					$(this[value]).panel(userConfig);
 
 				return $this;
 
@@ -313,8 +313,8 @@
 		// Multiple elements?
 			if (this.length > 1) {
 
-				for (var i=0; i < this.length; i++)
-					$(this[i]).placeholder();
+				for (let value of this)
+					$(this[value]).placeholder();
 
 				return $this;
 

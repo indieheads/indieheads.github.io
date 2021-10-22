@@ -49,8 +49,8 @@ var settings = {
 
 		if (this.length > 1) {
 
-			for (var i=0; i < this.length; i++)
-				$(this[i])._parallax(intensity);
+			for (let value of this)
+				$(this[value])._parallax(intensity);
 
 			return $this;
 
@@ -116,16 +116,15 @@ var settings = {
 	 */
 	$.fn._slider = function(options) {
 
-		var	$window = $(window),
-			$this = $(this);
+		var	$this = $(this);
 
 		if (this.length == 0)
 			return $this;
 
 		if (this.length > 1) {
 
-			for (var i=0; i < this.length; i++)
-				$(this[i])._slider(options);
+			for (let value of this)
+				$(this[value])._slider(options);
 
 			return $this;
 

@@ -5,7 +5,7 @@
  * Licensed under the MIT license
  */
 
-(function ( $, window, document, undefined ) {
+(function ( $, window, document ) {
 
 	'use strict';
 
@@ -145,7 +145,7 @@
 
 
 		// Prepare Last.fm track data
-		var track = {
+		return {
 			artist: results.artist['#text'],
 			album: results.album['#text'],
 			title: results.name,
@@ -157,9 +157,6 @@
 			},
 			url: results.url
 		};
-
-		return track;
-
 	};
 
 	/**
@@ -257,12 +254,8 @@
 	$.fn[ pluginName ] = function ( options ) {
 
 		return this.each( function () {
-
-//			if ( !$.data(this, 'plugin_' + pluginName) ) {
 				$.removeData(this, 'plugin_' + pluginName);
 				$.data(this, 'plugin_' + pluginName, new Plugin( this, options ) );
-//			}
-
 		});
 
 	};
